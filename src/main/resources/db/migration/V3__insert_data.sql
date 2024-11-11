@@ -1,0 +1,60 @@
+-- V3__Insert_clients_and_notes.sql
+
+BEGIN;
+
+INSERT INTO public.client (guid, agency, first_name, last_name, status, dob, created_date_time)
+VALUES ('D6E7A2B1-5C8D-4E1F-9A3B-1C5D8E9F0A3B', 'v6H8', 'Liam', 'Brown', 'ACTIVE', '1985-03-10', '2023-11-06 12:00:00'),
+       ('B2D4E6F1-0A3B-8C5E-1D7F-8B2C9A4E5F6G', 'v2K9', 'Mia', 'Davis', 'INACTIVE', '1991-07-23',
+        '2023-11-07 12:00:00'),
+       ('A1F2D3C4-5B6A-7D9E-4C8B-1A3E6F0B2D4F', 'v9J3', 'Noah', 'Garcia', 'ACTIVE', '1988-12-18',
+        '2023-11-08 12:00:00'),
+       ('E3A2B4D5-6F7C-8A9B-0E4C-2D1F3A5B6C7D', 'v3L6', 'Emma', 'Rodriguez', 'INACTIVE', '1995-05-05',
+        '2023-11-09 12:00:00'),
+       ('B1C2A3D4-5E6F-7B8C-9A0D-2B1C3D4E5F6G', 'v7M1', 'Oliver', 'Martinez', 'ACTIVE', '1993-09-30',
+        '2023-11-10 12:00:00'),
+       ('E7D1C4B3-2A4B-5C8F-9B0A-1D5E6F3A2B7C', 'v1N8', 'Ava', 'Hernandez', 'INACTIVE', '1980-11-11',
+        '2023-11-11 12:00:00'),
+       ('F9E2C5D1-0B1C-4A3E-6D7F-4B2A8C5D1F6G', 'v8Q7', 'Elijah', 'Wilson', 'ACTIVE', '1992-01-01',
+        '2023-11-12 12:00:00'),
+       ('C1D7E2A9-4B9C-5E3D-0A1B-8F2E3C6D4F0B', 'v3S4', 'Isabella', 'Lopez', 'INACTIVE', '1986-04-22',
+        '2023-11-13 12:00:00'),
+       ('B5C9A4D1-2E3F-6A8C-9D0B-1E1C2D4F5G7H', 'v6T5', 'James', 'Gonzalez', 'ACTIVE', '1994-06-14',
+        '2023-11-14 12:00:00'),
+       ('A8B2C3D4-0E1F-5A9D-2B4C-1D8E6F3A4B2C', 'v9J0', 'Sophia', 'Perez', 'INACTIVE', '1989-03-01',
+        '2023-11-15 12:00:00'),
+       ('B4E5D6C7-1E2F-3A8B-4D5C-6A7B8C9D0E1F', 'v0X2', 'Liam', 'Nguyen', 'ACTIVE', '1984-07-19',
+        '2023-11-16 12:00:00'),
+       ('C2D4E1F3-7B8A-6C5D-4E3B-1A8B2F0D1E4G', 'v1Y3', 'Charlotte', 'Hall', 'INACTIVE', '1998-03-12',
+        '2023-11-17 12:00:00'),
+       ('A3B2C1D5-9E8F-7A6C-5D4B-2C3E1F0G9H8I', 'v2Z4', 'James', 'Carter', 'ACTIVE', '1990-11-30',
+        '2023-11-18 12:00:00'),
+       ('D6E5C4B2-3A1D-4B8A-9F0C-1E3B5A7F6G8H', 'v3A1', 'Aiden', 'Mitchell', 'INACTIVE', '1983-05-15',
+        '2023-11-19 12:00:00'),
+       ('F9E8D7C6-2B3A-4C5D-8E1F-1A2B3F4G5H6I', 'v4B2', 'Amelia', 'Perez', 'ACTIVE', '1995-08-24',
+        '2023-11-20 12:00:00');
+
+INSERT INTO public.client_note (guid, comments, modified_date_time, client_guid, datetime, logged_user,
+                                created_date_time)
+VALUES ('F1E2B3A4-5C6D-7E8F-9B0A-1B2C3D4E5F6G', 'Initial consultation was very informative.', '2023-11-06 12:30:00',
+        'D6E7A2B1-5C8D-4E1F-9A3B-1C5D8E9F0A3B', '2023-11-06 12:30:00', 'user02', '2023-11-06 12:45:00'),
+       ('B4E5D6C7-1E2F-3A8B-4D5C-6A7B8C9D0E1F', 'Follow-up scheduled for next week.', '2023-11-07 13:15:00',
+        'B2D4E6F1-0A3B-8C5E-1D7F-8B2C9A4E5F6G', '2023-11-07 13:15:00', 'user03', '2023-11-07 13:30:00'),
+       ('A1C2B3E4-5F6D-7A8C-9E0B-1D2C3A4B5E6F', 'Client expressed satisfaction with the service.',
+        '2023-11-08 14:00:00', 'A1F2D3C4-5B6A-7D9E-4C8B-1A3E6F0B2D4F', '2023-11-08 14:00:00', 'user01',
+        '2023-11-08 14:15:00'),
+       ('C3D4E5F6-7A8B-9C0D-1E2F-3A4B5C6D7E8F', 'Documentation of health concerns completed.', '2023-11-09 10:30:00',
+        'E3A2B4D5-6F7C-8A9B-0E4C-2D1F3A5B6C7D', '2023-11-09 10:30:00', 'user02', '2023-11-09 10:45:00'),
+       ('D4E5C6B7-8A9F-0B1C-2D3E-4F5A6D7E8F9A', 'Client was referred to a specialist.', '2023-11-10 11:00:00',
+        'B1C2A3D4-5E6F-7B8C-9A0D-2B1C3D4E5F6G', '2023-11-10 11:00:00', 'user03', '2023-11-10 11:15:00'),
+       ('A6B5C4D3-2E1F-0A9C-8B7A-6D5C4E3F2G1H', 'Pending approval for further treatment.', '2023-11-11 12:30:00',
+        'E7D1C4B3-2A4B-5C8F-9B0A-1D5E6F3A2B7C', '2023-11-11 12:30:00', 'user01', '2023-11-11 12:45:00'),
+       ('F8E7D6C5-4B3A-2D1E-0F9B-8A7C6B5D4E3F', 'Client feedback on treatment options received.', '2023-11-12 13:00:00',
+        'F9E2C5D1-0B1C-4A3E-6D7F-4B2A8C5D1F6G', '2023-11-12 13:00:00', 'user04', '2023-11-12 13:15:00'),
+       ('C1E2F3A4-5D6C-7B8A-9E0B-1A3C4D5E6F7G', 'New therapy options discussed.', '2023-11-13 14:30:00',
+        'C1D7E2A9-4B9C-5E3D-0A1B-8F2E3C6D4F0B', '2023-11-13 14:30:00', 'user05', '2023-11-13 14:45:00'),
+       ('B6A5C4D3-1E2F-3A9B-0C8D-4E5F6A7B8C9D', 'Scheduled follow-up for next month.', '2023-11-14 15:00:00',
+        'B5C9A4D1-2E3F-6A8C-9D0B-1E1C2D4F5G7H', '2023-11-14 15:00:00', 'user06', '2023-11-14 15:15:00'),
+       ('D3C2B1A4-5E6F-7D8C-9B0A-1C2B3D4E5F6G', 'Client’s progress reviewed and noted.', '2023-11-15 16:15:00',
+        'A8B2C3D4-0E1F-5A9D-2B4C-1D8E6F3A4B2C', '2023-11-15 16:15:00', 'user02', '2023-11-15 16:30:00');
+
+COMMIT;
